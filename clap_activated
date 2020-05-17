@@ -1,0 +1,19 @@
+int soundDetectedPin = 10;
+int soundDetectedVal = HIGH;
+
+int led1 = 3;
+
+void setup ()
+{
+  pinMode(led1, OUTPUT);
+  pinMode (soundDetectedPin, INPUT) ;
+}
+void loop ()
+{
+  soundDetectedVal = digitalRead (soundDetectedPin) ;
+  if (soundDetectedVal == LOW)
+  {
+    digitalWrite(led1, !digitalRead(led1));
+    delay(250);
+  }
+}
